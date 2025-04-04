@@ -50,11 +50,12 @@ while True:
         if LIMITE_SAQUES >= saques_feitos and valor_sacado <= limite and valor_sacado <= saldo:
             print(f"Voce acabou de realizar um saque de {valor_sacado:.2f} ")
             extrato.append(f"Voce fez um saque no valor de: {valor_sacado:.2f}")
+            saldo -= valor_sacado
+            saques_feitos +=1
         else:
             print("Voce atingiu o limite de saques diarios ou excedeu o valor permitido")
 
-        saldo -= valor_sacado
-        saques_feitos +=1
+        
         input("Pressione enter para continuar")
         
        
